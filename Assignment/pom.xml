@@ -3,4 +3,26 @@
   <groupId>LabAssignment</groupId>
   <artifactId>Assignment</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <build>
+	  <plugins>
+		  <plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-compiler-plugin</artifactId>
+		    <version>3.6.3</version>
+		    <configuration>
+		      <source>11</source>
+		      <target>11</target>
+		    </configuration>
+		  </plugin>
+	</plugins>
+  </build>
+
+  <distributionManagement>
+	<snapshotRepository>
+		<id>lab_work</id>
+		<name>lab_work</name>
+		<url>http://localhost:8081/repository/lab_work/</url>
+	</snapshotRepository>
+  </distributionManagement>
 </project>
