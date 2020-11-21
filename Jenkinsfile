@@ -1,29 +1,60 @@
-pipeline{
-    agent any
-    stages{
-        stage('Clean'){
-            steps{
-                echo "Clean Stage"
-                bat "mvn clean"
-            }
-        }
-        stage('Test'){
-            steps{
-                echo "Test Stage"
-                bat "mvn test"
-            }
-        }
-        stage('Package'){
-            steps{
-                echo "Package Stage"
-                bat "mvn package"
-            }
-        }
-        stage('Deploy'){
-            steps{
-                echo "Deploy Stage"
-                bat "mvn deploy"
-            }
-        }
-    }
-}
+pipeline{  
+	 	    agent any 
+	 	    stages{ 
+	 	      stage('Start'){ 
+	 	          steps{ 
+	 	          echo 'Start the Pipeline' 
+	 	          } 
+	 	      } 
+ 	         
+ 	         
+ 	        stage('Clean phase Starts'){  	         
+                steps{ 
+	 	          echo 'Start the Clean phase' 
+	 	          } 
+	 	      } 
+ 	      stage('Clean'){  	          
+              steps{  	         
+                  bat 'mvn clean' 
+	 	          } 
+	 	      } 
+ 	         
+ 	         
+ 	        stage('Install phase Starts'){  	          
+                steps{ 
+	 	          echo 'Start the Instll phase' 
+	 	          } 
+	 	      } 
+ 	        stage('Install'){  	         
+                steps{  	         
+                    bat 'mvn install' 
+	 	          } 
+	 	      } 
+ 	         
+ 	        
+ 	        stage('Test phase Starts'){  	         
+                steps{ 
+	 	          echo 'Start the Test phase' 
+	 	          } 
+	 	      } 
+ 	        stage('Test'){  	          
+                steps{ 
+	 	          bat 'mvn test' 
+	 	          } 
+	 	      } 
+ 	         
+ 	         
+ 	         
+ 	        stage('Deploy phase Starts'){  	         
+                steps{  	         
+                    echo 'Start the Deploy phase' 
+	 	          } 
+	 	      } 
+ 	        stage('Deploy'){  	         
+                steps{  	         
+                    bat 'mvn deploy' 
+	 	          } 
+	 	      } 
+	 	    } 
+} 
+
