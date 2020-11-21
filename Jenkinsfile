@@ -4,7 +4,7 @@ pipeline{
         stage('Clean'){
             steps{
                 echo "Clean Stage"
-                bat "mvn clean"
+                bat "mvn -s settings.xml clean"
             }
         }
         stage('Test'){
@@ -22,7 +22,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 echo "Deploy Stage"
-                bat "mvn deploy"
+                bat "mvn -s settings.xml deploy"
             }
         }
     }
