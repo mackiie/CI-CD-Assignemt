@@ -4,25 +4,25 @@ pipeline{
         stage('Clean'){
             steps{
                 echo "Clean Stage"
-                bat "mvn -s settings.xml clean"
+                bat "mvn clean"
             }
         }
         stage('Test'){
             steps{
                 echo "Test Stage"
-                bat "mvn -s settings.xml test"
+                bat "mvn test"
             }
         }
         stage('Package'){
             steps{
                 echo "Package Stage"
-                bat "mvn -s settings.xml package"
+                bat "mvn package"
             }
         }
         stage('Deploy'){
             steps{
                 echo "Deploy Stage"
-                bat "mvn -s settings.xml deploy"
+                bat "mvn deploy"
             }
         }
     }
