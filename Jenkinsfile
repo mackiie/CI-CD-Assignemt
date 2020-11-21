@@ -10,13 +10,13 @@ pipeline{
         stage('Test'){
             steps{
                 echo "Test Stage"
-                bat "mvn test"
+                bat "mvn -s settings.xml test"
             }
         }
         stage('Package'){
             steps{
                 echo "Package Stage"
-                bat "mvn package"
+                bat "mvn -s settings.xml package"
             }
         }
         stage('Deploy'){
