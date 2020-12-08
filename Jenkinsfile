@@ -45,16 +45,5 @@ pipeline{
  	         
  	         
  	         
- 	        stage('Deploy phase Starts'){  	         
-                steps{  	         
-                    echo 'Start the Deploy phase' 
-	 	          } 
-	 	      } 
- 	        stage('Deploy'){  	         
-                steps{  	         
-                    bat 'mvn deploy' 
-	 	          } 
-	 	      } 
-	 	    } 
-} 
+ 	  } 
 
